@@ -5,7 +5,7 @@ export function formatDate(
   try {
     const d = new Date(dateInput);
     if (isNaN(d.getTime())) return '';
-    return d.toLocaleDateString('en-US', options);
+    return d.toLocaleDateString('en-US', { ...options, timeZone: 'UTC' });
   } catch {
     return '';
   }

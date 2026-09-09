@@ -1,8 +1,9 @@
 import { User, Candidate, Client, Requisition, Submission } from '../types';
 
-const now = new Date();
+// Keep demo data identical between the server render and browser hydration.
+const seedNow = new Date('2026-01-15T12:00:00.000Z');
 const getIsoDaysAgo = (days: number, hoursOffset = 0): string => {
-  const d = new Date(now.getTime() - days * 24 * 60 * 60 * 1000 - hoursOffset * 60 * 60 * 1000);
+  const d = new Date(seedNow.getTime() - days * 24 * 60 * 60 * 1000 - hoursOffset * 60 * 60 * 1000);
   return d.toISOString();
 };
 
